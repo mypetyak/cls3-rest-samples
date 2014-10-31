@@ -27,7 +27,7 @@ response = RestClient.post(
   :content_type => :json, :accept => :json, :Authorization => "Bearer #{access_token}"
 )
 
-interview_id = JSON.parse(response)['id']
+interview_id = JSON.parse(response)['interview_launcher']['id']
 
 puts "http://localhost:3000/api/v1/interviews/#{interview_id}/launch_url"
 response = RestClient.get(
